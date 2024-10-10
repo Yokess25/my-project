@@ -1,0 +1,21 @@
+@extends('layouts.boxed')
+@section('content')
+<section class="content-header">
+          <h1>
+           Welcome
+          </h1>   
+        </section>
+        <!-- Main content -->
+        <section class="content">
+  <img class="w-full" src="https://picsum.photos/400/300" alt="Blog Image">
+        <div class="px-6 py-4">
+          <h2 class="font-bold text-2xl mb-2">This is My Blog Title</h2>
+          <p class="mt-3 text-gray-600 text-base">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime cum doloribus quasi eius corporis veniam natus necessitatibus magnam illum! Aut, laboriosam sit. Quis suscipit molestiae id cum, quo reprehenderit neque labore laboriosam explicabo amet, aliquid quae molestias itaque expedita incidunt ipsum dignissimos odit, at cumque sapiente? Beatae sequi ab aperiam. In dolor neque exercitationem. Dolor modi praesentium quis distinctio? Pariatur est esse porro dicta quidem, iste nihil dolorem asperiores animi consectetur rem fugit id sunt nisi illo reiciendis illum cumque, quas veritatis quisquam labore optio voluptate. Eligendi, odit aperiam? Facere delectus maiores repellendus provident, incidunt reiciendis tempora adipisci perspiciatis corporis aliquam culpa, sed illum similique, dolor ut? At minus, et nobis atque libero ipsam tempora, provident illum error ducimus magnam molestiae! Molestiae recusandae ipsa alias ipsum ut! Consequatur omnis eum quidem, quo dolorem magni velit ullam tenetur ratione laborum nihil earum reiciendis adipisci nemo consequuntur quos facilis totam labore molestiae optio sed sit enim exercitationem? Magni adipisci fugit praesentium hic? Est voluptate accusantium voluptatibus sunt expedita odio nemo sint eum itaque porro. Voluptates adipisci corporis dignissimos, nostrum delectus officia labore facilis mollitia explicabo quos. Quidem, officia. Hic deserunt distinctio veniam corrupti animi. Amet modi eligendi, alias quas repellat minima, pariatur temporibus sequi quae incidunt necessitatibus! Dolor nesciunt ullam expedita possimus exercitationem, veritatis, ex natus voluptatum cumque modi magni nostrum iste. Quos amet adipisci labore odio alias. Molestias rerum nobis impedit at ullam qui debitis, possimus eius architecto eaque, suscipit quisquam blanditiis cumque id, iste nemo ad ipsa necessitatibus veniam illum maiores. Nam officiis soluta explicabo adipisci voluptate neque ipsum temporibus nulla accusamus veritatis reiciendis quidem, nemo distinctio ullam earum fugiat aliquid eum minima necessitatibus iste doloribus totam? Perspiciatis eius hic pariatur, saepe delectus quos possimus, ducimus enim quidem optio voluptate error deserunt, odio quaerat inventore fugit dolor reprehenderit illo sed? Explicabo nesciunt quos aut voluptates earum, rerum temporibus dolores voluptatum eum ad ipsa obcaecati voluptatibus eveniet fugiat! Necessitatibus possimus facere placeat explicabo quo ratione eos nihil nemo aliquam officia velit, excepturi corporis, libero voluptatem pariatur reiciendis sint, optio debitis numquam? Ipsa facilis ipsum facere, saepe aliquid quos! Autem doloremque voluptatum explicabo, beatae culpa obcaecati necessitatibus similique totam minima eveniet perferendis quod sint, corrupti nam eos illum qui mollitia officia nostrum dolorum ab ipsum voluptas expedita! Iste neque at dicta, ipsum necessitatibus dolore illo aut, cupiditate placeat id vero quibusdam quidem molestiae aspernatur optio sequi minus distinctio tempora atque ad! Repellat laborum, quis consequuntur eius sed unde rerum minus reprehenderit iste hic magni in enim perferendis culpa, doloribus magnam soluta provident cupiditate neque. Iste eaque nihil alias voluptatibus optio, culpa odio animi doloribus id, iusto omnis illum voluptatem aliquid aut officiis saepe doloremque esse. Ut cupiditate ex aut. Earum similique quis molestias ea ducimus vel repellat sed commodi unde facilis ullam itaque doloribus eaque nihil labore asperiores, a nemo! Sit minima amet, veritatis quod quis officiis blanditiis quidem neque corrupti in voluptatem similique perferendis rerum eligendi debitis tempore fuga repellendus itaque excepturi maiores ea? Hic maxime ratione tempora eligendi ipsum maiores.  
+          </p>
+          <button class="btnn">
+              Read More
+          </button>  
+        </div>
+</section>
+@endsection
