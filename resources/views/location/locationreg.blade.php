@@ -9,6 +9,13 @@
               @csrf
               <div class="box-body">
                 <div class="form-group">
+                <label>Select District</label>
+                      <select class="form-control" name="district_id">
+                        <option>Select</option>
+                          @foreach($dist as $d)
+                          <option value="{{$d->id}}">{{$d->district}}</option>
+                          @endforeach
+                      </select>
                   <label for="location">Enter Location</label>
                   <input type="text" class="form-control" id="location" name="location" placeholder="Enter Location">
                 </div>

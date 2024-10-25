@@ -4,7 +4,7 @@
           <!-- Sidebar user panel -->
           <div class="user-panel">
             <div class="pull-left image">
-              <img src="asset/dist/img/avatar.png" class="img-circle" alt="User Image" />
+              <img src="{{ asset('asset/dist/img/avatar.png') }}"  class="img-circle" alt="User Image" />
             </div>
             <div class="pull-left info">
               <p>{{auth::user()->name}}</p>
@@ -20,7 +20,7 @@
             </li>     
             <li class="treeview">
               <a href="{{route('index')}}">
-                <i class="fa fa-table"></i> <span>Tables</span>
+                <i class="fa fa-table"></i> <span>Students</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>
@@ -39,6 +39,18 @@
             <li class="treeview">
               <a href="{{route('location')}}">
                 <i class="fa fa-map-marker" aria-hidden="true"></i> <span>Location</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="{{route('markindex')}}">
+                <i class="fa fa-map-o" aria-hidden="true"></i> <span>Marks</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li>
+            <li class="treeview">
+              <a href="{{route('imtext')}}">
+                <i class="fa fa-upload" aria-hidden="true"></i> <span>Import/Export</span>
                 <i class="fa fa-angle-left pull-right"></i>
               </a>
             </li>

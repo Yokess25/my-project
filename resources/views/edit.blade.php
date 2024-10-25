@@ -1,7 +1,7 @@
 @extends('layouts.boxed')
 @section('content')
 <!-- Content Header (Page header) -->
-<section class="content-header"><h1>Register</h1></section>
+<section class="content-header"><h1>Edit Details</h1></section>
   <section class="content">
     <div class="row">
       <div class="col-md-6">
@@ -61,10 +61,10 @@
                         </div>
                         <div class="form-group">
                           <label>Select State</label>
-                            <select name="state" class="form-control">
+                            <select name="state" id="state_id" class="form-control">
                               <option value="">Select</option>
                               @foreach ($state as $s)
-                                <option value="{{ $s->state }}"
+                                <option value="{{ $s->id }}"
                                     @if($stud->state == $s->state) {{ 'selected' }} @endif>
                                     {{ $s->state }}
                                 </option>
@@ -73,10 +73,10 @@
                         </div>
                         <div class="form-group">
                           <label>Select District</label>
-                            <select name="district" class="form-control">
+                            <select name="district" id="district" class="form-control">
                               <option value="">Select</option>
                                 @foreach ($dist as $d)
-                                  <option value="{{ $d->district }}"
+                                  <option value="{{ $d->id }}"
                                     @if($stud->district == $d->district) {{ 'selected' }} @endif>
                                     {{ $d->district }}
                                   </option>
@@ -85,10 +85,10 @@
                         </div>
                         <div class="form-group">
                           <label>Select Location</label>
-                            <select name="location" class="form-control">
+                            <select name="location" id="location" class="form-control">
                               <option value="">Select</option>
                                 @foreach ($loc as $lt)
-                                  <option value="{{ $lt->location }}"
+                                  <option value="{{ $lt->id }}"
                                     @if($stud->location == $lt->location) {{ 'selected' }} @endif>
                                     {{ $lt->location }}
                                   </option>
@@ -105,6 +105,42 @@
                     <a href="{{route('index')}}">BACK</a>
                 </div>
             </form>
+            <script>
+        // Filter District
+      $(document).ready(function() {
+        $('#state_id').on('change', function() {
+          var state = $(this).val();
+          if(state) {
+            $.ajax ({
+              url: "{{route('alldist')}}",
+              data: {state_id: state, },
+              success: function(data) {
+                $('#district').html(data);
+                // alert(data);
+              }
+            });
+          }
+        });
+      });
+
+      // Filter Locations
+      $(document).ready(function() {
+        $('#district').on('change', function() {
+          var dist = 0;
+           dist = $(this).val();
+          if(dist) {
+            $.ajax({
+              url: "{{route('locationlist')}}",
+              data: {district: dist,},
+              success: function(data) { 
+                $('#location').html(data);
+                // alert(data);
+              }
+            });
+          }
+        });
+      });
+    </script>  
             @if(Session()->has('message'))
                           <script>
                               swal("message","{{Session::get('Updated successfully')}}",'warning',{

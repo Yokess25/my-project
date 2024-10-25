@@ -31,6 +31,7 @@
                           <th>District</th>
                           <th>Location</th>
                           <th>Address</th>
+                          <th>Marks</th>
                           <th>Action</th>
                         </tr>
                       </thead>
@@ -47,6 +48,9 @@
                           <td>{{$st->district}}</td>
                           <td>{{$st->location}}</td>
                           <td>{{$st->address}}</td>
+                          <td>
+                            <a href="{{route('showmarks', ['id' =>$st->id]) }}" class="btn btn-block btn-info fa fa-eye"></a>
+                          </td>
                           <td>
                             <a href="{{route('edit', ['id' => $st->id]) }}" class="btn btn-block btn-info fa fa-pencil" aria-hidden="true"></a>
                             <form action="{{route('delete',['id'=> $st->id] )}}" method="POST">
@@ -76,6 +80,10 @@
                         @endforeach
                       </tbody>
                     </table>
+                    <form action="{{route('students_list')}}" method="GET">
+                      @csrf
+                      <button type="submit" class="btn btn-primary">Download PDF</button>
+                  </form>
                 </div>
               </div>
             </div>

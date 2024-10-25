@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Locations extends Model
+class Marks extends Model
 {
     use HasFactory;
-    protected $fillable=['district_id','location'];
+    protected $fillable=['student_id','tamil','english','maths','science','social'];
+
 }

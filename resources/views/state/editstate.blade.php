@@ -1,6 +1,6 @@
 @extends('layouts.boxed')
 @section('content')
-<section class="content-header"><h1>Edit District</h1></section>
+<section class="content-header"><h1>Edit State</h1></section>
   <section class="content">
     <div class="row">
       <div class="col-md-6">

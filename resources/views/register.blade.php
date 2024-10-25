@@ -56,26 +56,25 @@
                     <select class="form-control" name="state" id="state_id">
                       <option>Select</option>
                         @foreach($state as $s)
-                      <option value="{{$s->state}}">{{$s->state}}</option>
+                      <option value="{{$s->id}}">{{$s->state}}</option>
                         @endforeach
                     </select>
                 </div>
                 <div class="form-group">
                   <label>Select District</label>
-                    <select class="form-control" name="district">
+                    <select class="form-control" name="district" id="district">
                       <option>Select</option>
                         @foreach($dist as $d)
-                      <option value="{{$d->district}}">{{$d->district}}</option>
+                      <option value="{{$d->id}}">{{$d->district}}</option>
                         @endforeach
                     </select>
                 </div>
-                
                 <div class="form-group">
                   <label>Select Location</label>
-                    <select class="form-control" name="location">
+                    <select class="form-control" name="location" id="location">
                       <option>Select</option>
                         @foreach($loc as $lt)
-                      <option value="{{$lt->location}}">{{$lt->location}}</option>
+                      <option value="{{$lt->id}}">{{$lt->location}}</option>
                         @endforeach
                     </select>
                 </div>
@@ -93,29 +92,40 @@
     </div>
   </div>
 </section>
-<script type="text/javascript">
-                      $(document).ready(function() {
-                        $('#state_id').change(function() {
-                          var state = $('#state_id').val();
-                          // alert(state);
-                          $.ajax({
-                                      type: "GET",
-                                      url: "{{ route('DistrictsAll') }}",
-                                      data: {'state_id': state_id},
-                                      success: function(response) {
-                                            var users = response.users;
-                                            var userList = $('#userList');
-                                            userList.empty();
+  <script>
+        // Filter District
+      $(document).ready(function() {
+        $('#state_id').on('change', function() {
+          var state = $(this).val();
+          if(state) {
+            $.ajax ({
+              url: "{{route('alldist')}}",
+              data: {state_id: state, },
+              success: function(data) {
+                $('#district').html(data);
+                // alert(data);
+              }
+            });
+          }
+        });
+      });
 
-                                            users.forEach(function(user) {
-                                                userList.append('<p>' + user.name + '</p>');
-                                            });
-                                        },
-                                        error: function(status, error) {
-                                            console.error(error);
-                                        }
-                                  });
-                      });
-                      });
-                </script>
+      // Filter Locations
+      $(document).ready(function() {
+        $('#district').on('change', function() {
+          var dist = 0;
+           dist = $(this).val();
+          if(dist) {
+            $.ajax({
+              url: "{{route('locationlist')}}",
+              data: {district: dist,},
+              success: function(data) { 
+                $('#location').html(data);
+                // alert(data);
+              }
+            });
+          }
+        });
+      });
+    </script>  
 @endsection

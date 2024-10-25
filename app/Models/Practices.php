@@ -9,4 +9,5 @@ class Practices extends Model
 {
     use HasFactory;
     protected $fillable = ['name','age','gender','phone','email','state','district','location','address'];
+   
 }
